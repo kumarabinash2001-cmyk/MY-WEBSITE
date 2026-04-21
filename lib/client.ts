@@ -1,12 +1,12 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-// This is the cn function we added before
+// Keeps your existing utility function
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// ADD THIS NEW PART BELOW TO FIX THE CURRENT ERROR
+// FIXES THE CURRENT BUILD ERROR
 export const hasEnvVars = 
   process.env.NEXT_PUBLIC_SUPABASE_URL && 
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
